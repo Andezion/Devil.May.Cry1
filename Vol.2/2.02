@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main()
+{
+    int x, a, b, c;
+
+    printf("Podaj numer telefonu: ");
+    int scan = scanf("(%d) %d-%d-%d", &x, &a, &b, &c);
+    if (scan < 4)
+    {
+        printf("Incorrect input");
+        return 1;
+    }
+    else
+    {
+        printf("Numer kierunkowy: %.2d\n", x);
+        printf("Numer telfonu: %.3d-%.2d-%.2d", a, b, c);
+        return 0;
+    }
+}
