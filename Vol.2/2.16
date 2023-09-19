@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main()
+{
+    int x;
+    int y;
+    printf("Enter your number: ");
+    y = scanf("%i",&x);
+    if (y != 1)
+    {
+        printf("Incorrect input");
+        return 1;
+    }
+    else
+    {
+        if (x < 0)
+        {
+            printf("ujemna");
+        }
+        if (x > 0)
+        {
+            printf("dodatnia");
+        }
+        if (x == 0)
+        {
+            printf("zerowa");
+        }
+    }
+    return 0;
+}
