@@ -1,0 +1,54 @@
+#include <stdio.h>
+
+int main()
+{
+    int num;
+    printf("Enter your number: ");
+    int a = scanf("%i",&num);
+    switch (a)
+    {
+        case(1):
+            switch (num)
+            {
+                case 0:
+                    printf("Zero");
+                    return 0;
+                case 1:
+                    printf("Jeden");
+                    return 0;
+                case 2:
+                    printf("Dwa");
+                    return 0;
+                case 3:
+                    printf("Trzy");
+                    return 0;
+                case 4:
+                    printf("Cztery");
+                    return 0;
+                case 5:
+                    printf("Piec");
+                    return 0;
+                case 6:
+                    printf("Szesc");
+                    return 0;
+                case 7:
+                    printf("Siedem");
+                    return 0;
+                case 8:
+                    printf("Osiem");
+                    return 0;
+                case 9:
+                    printf("Dziewiec");
+                    return 0;
+                case 10:
+                    printf("Dziesiec");
+                    return 0;
+                default:
+                    printf("Incorrect input");
+                    return 1;
+            }
+        default:
+            printf("Incorrect input");
+            return 1;
+    }
+}
