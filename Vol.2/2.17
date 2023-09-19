@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main()
+{
+    float x;
+    int a;
+
+    printf("Enter first number: ");
+    a = scanf("%f", &x);
+    if (a != 1)
+    {
+        printf("Incorrect input");
+        return 1;
+    }
+    else
+    {
+        if (x < -5)
+        {
+            printf("%f",(x + 5)*(x + 5) - 10);
+        }
+        if ((x >= -5) && (x <= 5))
+        {
+            printf("%f",2*x*x + 3*x - 1);
+        }
+        if (x > 5)
+        {
+            printf("%f",(0.5*x - 2)*(2 - 0.75*x));
+        }
+    }
+    return 0;
+}
