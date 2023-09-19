@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main()
+{
+    double iloscKWh, kosztNetto, kosztBrutto;
+
+    printf("Podaj ilosc kWh: ");
+    if (scanf("%lf", &iloscKWh) != 1 || iloscKWh < 0)
+    {
+        printf("Incorrect input\n");
+        return 1;
+    }
+
+    if (iloscKWh <= 50)
+    {
+        kosztNetto = iloscKWh * 0.50;
+    } else if (iloscKWh <= 150)
+    {
+        kosztNetto = 50 * 0.50 + (iloscKWh - 50) * 0.75;
+    } else if (iloscKWh <= 250)
+    {
+        kosztNetto = 50 * 0.50 + 100 * 0.75 + (iloscKWh - 150) * 1.20;
+    } else
+    {
+        kosztNetto = 50 * 0.50 + 100 * 0.75 + 100 * 1.20 + (iloscKWh - 250) * 1.50;
+    }
+
+    kosztBrutto = kosztNetto * (1 + 0.22);
+
+    printf("Koszt brutto: %lf\n", kosztBrutto);
+
+    return 0;
+}
