@@ -1,0 +1,48 @@
+#include <stdio.h>
+
+int main()
+{
+    char znak;
+    int number;
+    printf("Enter pole: ");
+    scanf("%c%i",&znak,&number);
+    if (((znak >= 'a') && (znak <='h')) ||
+    ((znak >= 'A') && (znak <= 'H')))
+    {
+        if(number >= 1 && number <= 8)
+        {
+            if((znak == 'a' || znak == 'A' || znak == 'c' || znak == 'C' || znak == 'e' || znak == 'E' || znak == 'g'
+            || znak == 'G') && (number % 2 == 0))
+            {
+                printf("White");
+            }
+            if((znak == 'b' || znak == 'B' || znak == 'd' || znak == 'D' || znak == 'f' || znak == 'F' || znak == 'h'
+            || znak == 'H') && (number % 2 == 1))
+            {
+                printf("White");
+            }
+            if((znak == 'a' || znak == 'A' || znak == 'c' || znak == 'C' || znak == 'e' || znak == 'E' || znak == 'g'
+                || znak == 'G') && (number % 2 != 0))
+            {
+                printf("Black");
+            }
+            if((znak == 'b' || znak == 'B' || znak == 'd' || znak == 'D' || znak == 'f' || znak == 'F' || znak == 'h'
+                || znak == 'H') && (number % 2 == 0))
+            {
+                printf("Black");
+            }
+        }
+        else
+        {
+            printf("Incorrect input");
+            return 1;
+        }
+    }
+    else
+    {
+        printf("Incorrect input");
+        return 1;
+    }
+
+    return 0;
+}
