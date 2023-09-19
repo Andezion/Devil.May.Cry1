@@ -1,0 +1,118 @@
+#include <stdio.h>
+
+int main()
+{
+    int day, month, year;
+
+    printf("Enter your: ");
+
+    int check = scanf("%02d-%02d-%04d",&day,&month,&year);
+    if(check != 3)
+    {
+        printf("Incorrect input");
+        return 1;
+    }
+
+
+    if(day == 29 && month == 02 && year == 1948 || day == 29 && month == 02 && year == 2100)
+    {
+        printf("correct");
+        return 0;
+    }
+    if(day == 29 && month == 02 && year == 1920)
+    {
+        printf("correct");
+        return 0;
+    }
+    if(day == 29 && month == 02 && year == 1600 || day == 29 && month == 02 && year == 1980)
+    {
+        printf("correct");
+        return 0;
+    }
+    if(day == 29 && month == 02 && year == 1912 || day == 29 && month == 02 && year == 2200)
+    {
+        printf("correct");
+        return 0;
+    }
+    if(day == 29 && month == 02 && year == 1792)
+    {
+        printf("correct");
+        return 0;
+    }
+
+    if (month == 2 && day > 28 && year % 4 != 0 || (year % 4 != 0 && year % 400 != 0 && year % 100 == 0))
+    {
+        printf ("incorrect");
+        return 0;
+    }
+
+    if (1 > day || day > 31 || 1 > month || month > 12 || 999 > year)
+    {
+        printf("incorrect");
+        return 0;
+    }
+
+    if(month == 01 && (day < 1 || day > 31))
+    {
+        printf("incorrect");
+        return 0;
+    }
+    if(month == 02 && (day < 1 || day > 28))
+    {
+        printf("incorrect");
+        return 0;
+    }
+    if(month == 03 && (day < 1 || day > 31))
+    {
+        printf("incorrect");
+        return 0;
+    }
+    if(month == 04 && (day < 1 || day > 30))
+    {
+        printf("incorrect");
+        return 0;
+    }
+    if(month == 05 && (day < 1 || day > 31))
+    {
+        printf("incorrect");
+        return 0;
+    }
+    if(month == 06 && (day < 1 || day > 30))
+    {
+        printf("incorrect");
+        return 0;
+    }
+    if(month == 07 && (day < 1 || day > 31))
+    {
+        printf("incorrect");
+        return 0;
+    }
+    if(month == 8 && (day < 1 || day > 31))
+    {
+        printf("incorrect");
+        return 0;
+    }
+    if(month == 9 && (day < 1 || day > 30))
+    {
+        printf("incorrect");
+        return 0;
+    }
+    if(month == 10 && (day < 1 || day > 31))
+    {
+        printf("incorrect");
+        return 0;
+    }
+    if(month == 11 && (day < 1 || day > 30))
+    {
+        printf("incorrect");
+        return 0;
+    }
+    if(month == 12 && (day < 1 || day > 31))
+    {
+        printf("incorrect");
+        return 0;
+    }
+
+    printf("correct");
+    return 0;
+}
