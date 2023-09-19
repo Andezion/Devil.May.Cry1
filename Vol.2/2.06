@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+    int x;
+    int a;
+    int b;
+
+    printf("Enter first number: ");
+    x = scanf("%i", &a);
+    if (x != 1)
+    {
+        printf("Incorrect input");
+        return 1;
+    }
+
+    printf("Enter second number: ");
+    x = scanf("%i", &b);
+    if (x != 1)
+    {
+        printf("Incorrect input");
+        return 1;
+    }
+    if (b == 0)
+    {
+        printf("Operation not permitted");
+        return 1;
+    }
+    if (a % b == 0)
+    {
+        printf("%i is divisible by %i",a,b);
+    }
+    if (a % b != 0)
+    {
+        printf("%i is not divisible by %i",a,b);
+    }
+    return 0;
+}
