@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+    float a;
+    float b;
+    float c;
+    printf("Podaj a: ");
+    scanf("%f",&a);
+
+    printf("Podaj b: ");
+    scanf("%f",&b);
+
+    printf("Podaj c: ");
+    scanf("%f",&c);
+
+    float D = b*b - 4 * a * c;
+
+    if (a == 0 && b ==0 && c == 0)
+    {
+        printf("Nieskonczonosc");
+    }
+    else
+    {
+        if (a == 0 && b == 0)
+        {
+            printf("brak");
+        }
+        else
+        {
+            if (a == 0)
+            {
+                printf("Jeden pierwiastek: %f", -c / b);
+            }
+            else
+            {
+                if (D > 0)
+                {
+                    printf("Dwa pierwiastki: %f %f", ((-b + sqrt(D)) / (2 * a)),
+                           ((-b - sqrt(D)) / (2 * a)));
+                }
+                if (D == 0)
+                {
+                    printf("Jeden pierwiastek: %f",-b/(2 * a));
+                }
+                if (D < 0)
+                {
+                    printf("Brak");
+                }
+            }
+        }
+    }
+    return 0;
+}
