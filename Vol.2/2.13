@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+int main()
+{
+    float a;
+    float b;
+    float c;
+    float d;
+    float f;
+
+    printf("Enter numbers: ");
+    scanf("%f %f %f %f %f",&a,&b,&c,&d,&f);
+
+    double min = a;
+    if (min>b)
+        min=b;
+    if (min>c)
+        min=c;
+    if (min>d)
+        min=d;
+    if (min>f)
+        min=f;
+    printf("%f\n",min);
+
+    double max = a;
+    if (max<b)
+        max=b;
+    if (max<c)
+        max=c;
+    if (max<d)
+        max=d;
+    if (max<f)
+        max=f;
+    printf("%f\n", max);
+
+    printf("%.2f",(a+b+c+d+f)/5);
+}
