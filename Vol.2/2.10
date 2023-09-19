@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+    float x;
+    float a;
+    float b;
+
+    printf("Enter first number: ");
+    x = scanf("%f", &a);
+    if (x != 1)
+    {
+        printf("Incorrect input");
+        return 1;
+    }
+
+    printf("Enter second number: ");
+    x = scanf("%f", &b);
+    if (x != 1)
+    {
+        printf("Incorrect input");
+        return 1;
+    }
+
+    printf("Suma = %f\n", a + b);
+    printf("Roznica = %f\n", a - b);
+    printf("Iloczyn = %f\n", a * b);
+
+    if (b == 0)
+    {
+        printf("Operation not permitted");
+    }
+    else
+    {
+        printf("Iloraz = %f", a / b);
+    }
+    return 0;
+}
