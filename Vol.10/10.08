@@ -1,0 +1,65 @@
+#include <stdio.h>
+#include "vector_utils.h"
+#include "tested_declarations.h"
+#include "rdebug.h"
+
+int sort(int* tab, int size)
+{
+    if(tab == NULL || size <= 0)
+    {
+        return 1;
+    }
+
+    for(int i = 0; i < size - 1; i++)
+    {
+        for(int j = i + 1; j < size; j++)
+        {
+            if(*(tab + i) > *(tab + j))
+            {
+                int temp = *(tab + i);
+                *(tab + i) = *(tab + j);
+                *(tab + j) = temp;
+            }
+        }
+    }
+
+    return 0;
+}
+
+int main()
+{
+    int vector[100];
+    int size;
+
+    printf("Enter smth:\n");
+
+    int check1 = read_vector(vector, 100, -1);
+    if(check1 == -1)
+    {
+        printf("Not enough data available");
+        return 3;
+    }
+    if(check1 == -2)
+    {
+        printf("Incorrect input");
+        return 1;
+    }
+    if(check1 < 1)
+    {
+        printf("Not enough data available");
+        return 3;
+    }
+
+    size = check1;
+
+    int check2 = sort(vector, size);
+    if(check2 == 1)
+    {
+        printf("Incorrect input");
+        return 1;
+    }
+
+    display_vector(vector, size);
+
+    return 0;
+}
