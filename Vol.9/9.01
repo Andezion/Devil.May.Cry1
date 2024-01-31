@@ -1,0 +1,123 @@
+main:
+#include <stdio.h>
+#include <stdlib.h>
+#include "vector_utils.h"
+#include "tested_declarations.h"
+#include "rdebug.h"
+
+int main()
+{
+    int tab[150] = { 0 };
+
+    printf("Enter data:\n");
+
+    int size = read_vector(tab,150,0);
+    if(size == -2)
+    {
+        printf("Incorrect input");
+        return 1;
+    }
+    if(size < 1)
+    {
+        printf("Not enough data available");
+        return 3;
+    }
+    if(size == 1)
+    {
+        printf("%i",tab[0]);
+        return 0;
+    }
+
+    int check = bubble_sort(tab, size);
+    if(check == 1)
+    {
+        printf("Incorrect input");
+        return 1;
+    }
+    return 0;
+}
+
+vector.c:
+#include <stdlib.h>
+#include <stdio.h>
+#include "vector_utils.h"
+#include "tested_declarations.h"
+#include "rdebug.h"
+
+int read_vector(int *tab, int size, int stop_value)
+{
+    if (size < 1 || tab == NULL || size > 150)
+    {
+        return -1;
+    }
+
+    int counter = 0;
+    for (int i = 0; i < size; i++)
+    {
+        int check = scanf("%i", &*(tab + i));
+        if (check != 1)
+        {
+            return -2;
+        }
+        if (*(tab + i) == stop_value)
+        {
+            break;
+        }
+        counter++;
+    }
+
+    return counter;
+}
+
+void display_vector(const int* tab, int size)
+{
+    if(tab == NULL || size <= 0)
+    {
+        return;
+    }
+    for(int i = 0; i < size; i++)
+    {
+        printf("%i ",*(tab + i));
+    }
+    printf("\n");
+}
+
+int bubble_sort(int tab[], int size)
+{
+    if(tab == NULL || size <= 0)
+    {
+        return 1;
+    }
+
+    for(int i = 0; i < size - 1; i++)
+    {
+        int pointer = 0;
+        for(int j = 0; j < size - 1; j++)
+        {
+            if(tab[j] > tab[j + 1])
+            {
+                int temp = tab[j];
+                tab[j] = tab[j + 1];
+                tab[j + 1] = temp;
+                pointer = 1;
+            }
+        }
+        display_vector(tab, size);
+        if(pointer == 0)
+        {
+            break;
+        }
+    }
+
+    return 0;
+}
+
+vector.h:
+#ifndef DANTE2023_VECTOR_UTILS_H
+#define DANTE2023_VECTOR_UTILS_H
+
+int read_vector(int *tab, int size, int stop_value);
+void display_vector(const int* tab, int size);
+int bubble_sort(int tab[], int size);
+
+#endif //DANTE2023_VECTOR_UTILS_H
