@@ -1,4 +1,3 @@
-main:
 #include <stdio.h>
 #include <stdlib.h>
 #include "vector_utils.h"
@@ -37,51 +36,6 @@ int main()
     return 0;
 }
 
-vector.c:
-#include <stdlib.h>
-#include <stdio.h>
-#include "vector_utils.h"
-#include "tested_declarations.h"
-#include "rdebug.h"
-
-int read_vector(int *tab, int size, int stop_value)
-{
-    if (size < 1 || tab == NULL || size > 150)
-    {
-        return -1;
-    }
-
-    int counter = 0;
-    for (int i = 0; i < size; i++)
-    {
-        int check = scanf("%i", &*(tab + i));
-        if (check != 1)
-        {
-            return -2;
-        }
-        if (*(tab + i) == stop_value)
-        {
-            break;
-        }
-        counter++;
-    }
-
-    return counter;
-}
-
-void display_vector(const int* tab, int size)
-{
-    if(tab == NULL || size <= 0)
-    {
-        return;
-    }
-    for(int i = 0; i < size; i++)
-    {
-        printf("%i ",*(tab + i));
-    }
-    printf("\n");
-}
-
 int bubble_sort(int tab[], int size)
 {
     if(tab == NULL || size <= 0)
@@ -112,12 +66,4 @@ int bubble_sort(int tab[], int size)
     return 0;
 }
 
-vector.h:
-#ifndef DANTE2023_VECTOR_UTILS_H
-#define DANTE2023_VECTOR_UTILS_H
 
-int read_vector(int *tab, int size, int stop_value);
-void display_vector(const int* tab, int size);
-int bubble_sort(int tab[], int size);
-
-#endif //DANTE2023_VECTOR_UTILS_H
